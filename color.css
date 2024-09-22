@@ -1,0 +1,63 @@
+*{
+    background-image: url(images/cricket-background-illustration-cricket-champion_1008415-46698.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  body{
+    text-align: center;
+  }
+  h1{
+    text-transform: capitalize;
+    text-align: center;
+    color: aliceblue;
+  }
+  /* button{
+    border:1px solid black;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    font-size: 35px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    
+    
+  } */
+  /* button:active{
+    border: 2px solid rgb(51, 203, 227);
+    
+  }
+  button:hover{
+    border: 2px solid rgb(51, 203, 227);
+    
+  } */
+  h3{
+    color:black;
+  }
+  .clear{
+    border:1px solid black;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    cursor: pointer;
+  }
+  .clear:active{
+    border:1px solid lightskyblue;
+  }
+  .choice-button{
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    border: transparent;
+    cursor: pointer;
+  }
+  .choice-image{
+    height: 80px ;
+    
+  }
+  
+

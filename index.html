@@ -4,65 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cricket Game </title>
-  <style>
-    *{
-      background-image: url(istockphoto-1254179093-612x612.jpg);
-      background-repeat: no-repeat;
-      background-position: center;
-      background-attachment: fixed;
-      background-size: cover;
-    }
-    body{
-      text-align: center;
-    }
-    h1{
-      text-transform: capitalize;
-      text-align: center;
-      color: aliceblue;
-    }
-    button{
-      border:1px solid whitesmoke;
-      border-radius: 10px;
-      margin: 10px;
-      padding: 10px;
-      font-size: 35px;
-      color: rgb(0, 0, 0);
-      text-align: center;
-      
-    }
-    button:active{
-      border: 2px solid rgb(51, 203, 227);
-      
-    }
-    button:hover{
-      border: 2px solid rgb(51, 203, 227);
-      
-    }
-  </style>
+  <link rel="stylesheet" href="color.css">
+  
 </head>
 <body>
   <h1>🏏 Bat Ball Stump Game 🏏</h1><hr>
 
-  <button onclick="
+  <button class="choice-button" onclick="
   let computerChoice = compChoice();
   let resultMsg = getResult('Bat' ,computerChoice );
   showResult('Bat' , computerChoice , resultMsg);
-  ">Bat</button>
+  "><img class="choice-image" src="images/bat.png" alt="Bat"></button>
 
 
-  <button onclick="
+  <button class="choice-button"   onclick="
     computerChoice = compChoice();
     resultMsg = getResult('Ball' ,computerChoice );
     showResult('Ball' , computerChoice , resultMsg);
-  ">Ball</button>
+  "><img class="choice-image" src="images/ball.png" alt=""></button>
 
-  <button onclick="
+  <button class="choice-button"  onclick="
     computerChoice = compChoice();
     resultMsg = getResult('Stump' ,computerChoice );
     showResult('Stump' , computerChoice , resultMsg);
-  ">Stump</button>
+  "><img class="choice-image" src="images/stump.png" alt="Stump"></button>
 
-  <button onclick="
+  
+
+
+  <h3 id="user-Move"></h3>
+  <h3 id="computer-Move"></h3>
+  <h3 id="result"></h3>
+  <h3 id="score"></h3>
+
+  <button class="clear" onclick="
       localStorage.clear();
       resetScore();
       
@@ -91,8 +66,10 @@
     //  }
 
     score.displayScore = function(){
-        return `won:${score.win} , lost:${score.loss} ,tie:${score.tie}`;
+        return ` Score => won:${score.win} , lost:${score.loss} ,tie:${score.tie}`;
       }; 
+
+      showResult();
       
 
     }
@@ -157,13 +134,25 @@
 
     function showResult(userMove , computerMove , result){
       localStorage.setItem('score', JSON.stringify(score));
-      alert(`You have chosen ${userMove}. Computer choice is ${computerMove}
+
+      
+      document.querySelector('#user-Move').innerText = userMove !==undefined ? `You have chosen ${userMove}`: ' ';
+
+      document.querySelector('#computer-Move').innerText = computerMove !==undefined ? `Computer choice is ${computerMove}`: ' ';
+
+      document.querySelector('#result').innerText = result!==undefined? result: ' ';
+
+      document.querySelector('#score').innerText = score.displayScore();
+
+
+
+      // alert(`You have chosen ${userMove}. Computer choice is ${computerMove}
       
       
-      ${result}
+      // ${result}
       
       
-      ${score.displayScore()}`);
+      // ${score.displayScore()}`);
     }
     
 
